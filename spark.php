@@ -11,12 +11,13 @@ require_once(dirname(__FILE__) . "/status.php");
  * you when resources on your machine are low. It's designed to run
  * on linux servers and flexible to fit your needs.
  */
-class Spark {
+class Spark
+{
 	/**
 	 *
 	 * @var SparkAlarm[] Holds a list of active alarms
 	 */
-    private $alarms = [];
+	private $alarms = [];
 
 	/**
 	 * @var bool Whether or not to enable output to a certain logfile
@@ -50,49 +51,57 @@ class Spark {
 
 	private $sendNotificationOnSuccess = false;
 
-    public function __construct(){
-        $this->notifier = new SparkNotifier();
-    }
+	public function __construct()
+	{
+		$this->notifier = new SparkNotifier();
+	}
 
-	public function interval(int $interval) : Spark {
+	public function interval(int $interval): Spark
+	{
 		$this->interval = $interval;
 		return $this;
 	}
 
-	public function sendNotificationsOnSuccess(bool $status){
-    	$this->sendNotificationOnSuccess = $status;
-    	return $this;
+	public function sendNotificationsOnSuccess(bool $status)
+	{
+		$this->sendNotificationOnSuccess = $status;
+		return $this;
 	}
 
-	public function notifier(Notifier $notifier) : Spark{
-    	$this->notifier = $notifier;
-    	return $this;
+	public function notifier(Notifier $notifier): Spark
+	{
+		$this->notifier = $notifier;
+		return $this;
 	}
 
-	public function throttle(int $throttle)  : Spark{
+	public function throttle(int $throttle): Spark
+	{
 		$this->throttle = $throttle;
 		return $this;
 	}
 
 
-	public function keepAlive(bool $keepAlive)  : Spark {
-    	$this->keepAlive = $keepAlive;
-    	if ($keepAlive){
-    		set_time_limit(0);
+	public function keepAlive(bool $keepAlive): Spark
+	{
+		$this->keepAlive = $keepAlive;
+		if ($keepAlive) {
+			set_time_limit(0);
 		}
-    	return $this;
+		return $this;
 	}
 
-    public function addAlarm(Alarm $alarm)  : Spark {
-        $this->alarms[] = $alarm;
-        return $this;
-    }
+	public function addAlarm(Alarm $alarm): Spark
+	{
+		$this->alarms[] = $alarm;
+		return $this;
+	}
 
-    public function run() : Spark {
-    	$failed = [];
-    	$success = [];
-    	$this->lastAlertSummary = 0;
-    	do {
+	public function run(): Spark
+	{
+		$failed = [];
+		$success = [];
+		$this->lastAlertSummary = 0;
+		do {
 			foreach ($this->alarms as $alarm) {
 				if ($alarm->test()) {
 					$alarm->success();
@@ -107,7 +116,7 @@ class Spark {
 				}
 			}
 
-			$notifications = array_merge($failed,  $success);
+			$notifications = array_merge($failed, $success);
 			$this->sendSummary($notifications);
 
 			if ($this->keepAlive) {
@@ -117,26 +126,29 @@ class Spark {
 		return $this;
 	}
 
-	private function sendSummary($failedAlarms){
-    	if (time() - $this->lastAlertSummary >= $this->throttle){
-    		$this->notifier->send($failedAlarms);
+	private function sendSummary($failedAlarms)
+	{
+		if (time() - $this->lastAlertSummary >= $this->throttle) {
+			$this->notifier->send($failedAlarms);
 			$this->lastAlertSummary = time();
 		}
 	}
 
-	public function removeAlarm(Alarm $removeAlarm){
-    	$newAlarms = [];
-    	foreach ($this->alarms as $alarm){
-    		if (get_class($alarm) !== get_class($removeAlarm)){
-    			$newAlarms[] = $alarm;
+	public function removeAlarm(Alarm $removeAlarm)
+	{
+		$newAlarms = [];
+		foreach ($this->alarms as $alarm) {
+			if (get_class($alarm) !== get_class($removeAlarm)) {
+				$newAlarms[] = $alarm;
 			}
 		}
 		$this->alarms = $newAlarms;
-    	return $this;
+		return $this;
 	}
 
-	public function output($output){
-    	$this->output = $output;
-    	return $this;
+	public function output($output)
+	{
+		$this->output = $output;
+		return $this;
 	}
 }
