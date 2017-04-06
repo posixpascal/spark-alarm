@@ -1,0 +1,13 @@
+{
+    "name": "pascalraszyk/sparkalarm",
+    "description": "Add custom alarms for your server",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "p0six",
+            "email": "posixpascal@googlemail.com"
+        }
+    ],
+    "require": {}
+}
