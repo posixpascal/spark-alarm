@@ -58,6 +58,7 @@ If the CPU is above 95, spark will execute the error handler accordinly and send
 You can tell spark to check indefinitely using `->keepAlive()`:
 
 ```php 
+<?php 
 
 $spark
 ->addAlarm(new AlertIfCPUIsLow())
@@ -73,8 +74,8 @@ Spark supports custom notifier if you want to get bundled "summaries". By defaul
 You can write your own notifier easily by subclassing the existing notifier:
 
 
-```
-
+```php
+<?php
 class MyNotifier implements Notifier {
    public send($alarms){
      $str = "Test results:\n";
@@ -94,9 +95,9 @@ By default the notifier receives only failed posts, you can change this behaviou
 `$spark->sendNotificationOnSuccess(true)` globally or by setting the attribute on a class individually:
 
 ```php
-
+<?php 
 class MyNotifier {
-   public sendNotificationOnSuccess = true;
+   public $sendNotificationOnSuccess = true;
 }
 
 ```
