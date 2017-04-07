@@ -32,7 +32,7 @@ class Spark
 	/**
 	 * @var int Interval between each test run (all tests are checked in a single test run)
 	 */
-	private $interval = 60; // interval to check all tests
+	private $interval = 60 * 5; // interval to check all tests
 
 	/**
 	 * @var int Delay between summarized alerts
@@ -90,7 +90,7 @@ class Spark
 		return $this;
 	}
 
-	public function addAlarm(Alarm $alarm): Spark
+	public function addAlarm($alarm): Spark
 	{
 		$this->alarms[] = $alarm;
 		return $this;
@@ -134,7 +134,7 @@ class Spark
 		}
 	}
 
-	public function removeAlarm(Alarm $removeAlarm)
+	public function removeAlarm($removeAlarm)
 	{
 		$newAlarms = [];
 		foreach ($this->alarms as $alarm) {

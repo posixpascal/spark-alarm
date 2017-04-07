@@ -1,6 +1,6 @@
 {
-    "name": "pascalraszyk/sparkalarm",
-    "description": "Add custom alarms for your server",
+    "name": "posixpascal/sparkalarm",
+    "description": "Easy server monitoring library with custom alarms and notifications.",
     "type": "library",
     "license": "MIT",
     "authors": [
