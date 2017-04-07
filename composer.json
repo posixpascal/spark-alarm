@@ -1,5 +1,5 @@
 {
-  "name": "posixpascal/sparkalarm",
+  "name": "posixpascal/spark-alarm",
   "autoload": {
     "psr-4" : {
       "Spark\\Spark\\" : "src"
