@@ -1,7 +1,7 @@
 # 🔥spark->🚨alarm
 
 [![Build Status](https://travis-ci.org/posixpascal/spark-alarm.svg?branch=master)](https://travis-ci.org/posixpascal/spark-alarm)
-[![Latest Stable Version](https://poser.pugx.org/posixpascal/spark-alarm/version)](https://packagist.org/packages/posixpascal/spark-alarm)
+[![Latest Stable Version](https://poser.pugx.org/posixpascal/spark-alarm/v/stable)](https://packagist.org/packages/posixpascal/spark-alarm)
 [![Total Downloads](https://poser.pugx.org/posixpascal/spark-alarm/downloads)](https://packagist.org/packages/posixpascal/spark-alarm)
 [![License](https://poser.pugx.org/posixpascal/spark-alarm/license)](https://packagist.org/packages/posixpascal/spark-alarm)
 [![Code Climate](https://codeclimate.com/github/posixpascal/spark-alarm/badges/gpa.svg)](https://codeclimate.com/github/posixpascal/spark-alarm)
@@ -64,7 +64,7 @@ $spark
 
 Now add that script to your crontab file and you've added your first server monitoring tool.
 
-Here is a alarm which checks if a certain website is reachable:
+Here is an alarm which checks if a certain website is reachable:
 
 
 ```php
