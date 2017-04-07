@@ -4,6 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/posixpascal/spark-alarm/version)](https://packagist.org/packages/posixpascal/spark-alarm)
 [![Total Downloads](https://poser.pugx.org/posixpascal/spark-alarm/downloads)](https://packagist.org/packages/posixpascal/spark-alarm)
 [![License](https://poser.pugx.org/posixpascal/spark-alarm/license)](https://packagist.org/packages/posixpascal/spark-alarm)
+[![Code Climate](https://codeclimate.com/github/posixpascal/spark-alarm/badges/gpa.svg)](https://codeclimate.com/github/posixpascal/spark-alarm)
 
 Spark is a super simple monitoring tool with a very flexible architecture.
 You can create customized alarms which trigger on your behalf and send custom notifications.
