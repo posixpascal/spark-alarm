@@ -198,9 +198,9 @@ They include:
 <?php 
     interface SparkAlarmHelper {
 	    // cpu
-    	public function getCPULoadAverage();
-	
-    	// disk space
+	    public function getCPULoadAverage();
+	    
+	    // disk space
 	    public function getFreeDiskSpace();
 	    public function getTotalDiskSpace();
 	    public function getFreeDiskSpaceInPercentage();
