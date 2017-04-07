@@ -2,8 +2,11 @@
 
 namespace Spark;
 
-
-class AlarmStatus {
+/**
+ * Enum Status for alarms
+ * @package Spark
+ */
+class SparkAlarmStatus {
 	const SUCCESS = 1;
 	const ERROR = 2;
 }
