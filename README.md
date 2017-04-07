@@ -1,5 +1,7 @@
 # 🔥spark->🚨alarm
 
+[![Build Status](https://travis-ci.org/posixpascal/spark-alarm.svg?branch=master)](https://travis-ci.org/posixpascal/spark-alarm)
+
 Spark is a super simple monitoring tool with a very flexible architecture.
 You can create customized alarms which trigger on your behalf and send custom notifications.
 The implementation detail is minimalistic on purpose so that spark adapts to your platform.
