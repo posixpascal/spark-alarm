@@ -2,9 +2,9 @@
 
 namespace Spark;
 
-require_once(dirname(__FILE__) . "/alarm.php");
-require_once(dirname(__FILE__) . "/notifier.php");
-require_once(dirname(__FILE__) . "/status.php");
+require_once(dirname(__FILE__) . "/Alarm.php");
+require_once(dirname(__FILE__) . "/Notifier.php");
+require_once(dirname(__FILE__) . "/Status.php");
 
 /**
  * SparkAlarm is a simple yet powerful notification system which alerts

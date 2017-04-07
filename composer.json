@@ -1,13 +1,29 @@
 {
-    "name": "posixpascal/sparkalarm",
-    "description": "Easy server monitoring library with custom alarms and notifications.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "p0six",
-            "email": "posixpascal@googlemail.com"
-        }
-    ],
-    "require": {}
+  "name": "posixpascal/sparkalarm",
+  "autoload": {
+    "psr-4" : {
+      "Spark\\Spark\\" : "src"
+    }
+  },
+  "description": "Easy server monitoring library with custom alarms and notifications.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "p0six",
+      "email": "posixpascal@googlemail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.0.*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/posixpascal/spark-alarm"
+    }
+  ],
 }
