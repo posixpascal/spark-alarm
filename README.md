@@ -1,4 +1,4 @@
-# 🔥spark 🚨alarm
+# 🌩spark 🚨alarm
 
 [![Build Status](https://travis-ci.org/posixpascal/spark-alarm.svg?branch=master)](https://travis-ci.org/posixpascal/spark-alarm)
 [![Latest Stable Version](https://poser.pugx.org/posixpascal/spark-alarm/v/stable)](https://packagist.org/packages/posixpascal/spark-alarm)
