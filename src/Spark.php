@@ -121,7 +121,8 @@ class Spark
 	}
 
 	/**
-	 * Whether or not spark should keep running for ever continously checking alarms
+	 * Whether or not spark should keep 
+	 ning for ever continously checking alarms
 	 * this is useful if you want to start spark as a system daemon at startup
 	 * @param bool $keepAlive whether or not to enable keepalive.
 	 * @return Spark
@@ -166,6 +167,7 @@ class Spark
 
 		do {
 			foreach ($this->alarms as $alarm) {
+		
 				if ($alarm->test()) {
 					$alarm->success();
 					$alarm->status(SparkAlarmStatus::SUCCESS);
@@ -173,11 +175,12 @@ class Spark
 					if ($this->sendNotificationOnSuccess || $alarm->sendNotificationOnSuccess) {
 						$notifications[] = $alarm;
 					}
-				} else {
-					$notifications[] = $alarm;
-					$alarm->status(SparkAlarmStatus::ERROR);
-					$alarm->error();
+					continue;
 				}
+				
+				$notifications[] = $alarm;
+				$alarm->status(SparkAlarmStatus::ERROR);
+				$alarm->error();
 			}
 
 			if (!$this->silent) {
